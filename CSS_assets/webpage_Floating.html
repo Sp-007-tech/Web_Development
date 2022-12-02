@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Floating Boxes.</title>
+    <style type="text/CSS">
+        
+        .lar{
+            font-size: 150%;
+            color: antiquewhite;
+        }
+        .ye{
+            text-decoration: underline;
+            
+        }
+        .first-section{
+            color: darkorange;
+            background-color: black;
+            width: 40%;
+            float: left;
+            
+        }
+        .no{
+            color: bisque;
+    }
+        .second-section{
+            background-color: darkorange;
+            text-decoration: underline;
+            width: 40%;
+            float:right;
+        }
+        .clear-float{
+            clear: both;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="first-section">
+    <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet error molestiae cumque nulla.</p></div>
+
+
+    <div class="second-section">
+    <h2 class="lar">Css in Cool !</h2>
+
+    <h3 class="no">Lorem ipsum dolor sit, amet consectetur adipisicing elit.<p class="ye"> Ullam sed unde reprehenderit.</p></h3>
+</div>    
+    
+<!-- This paragraph will lay between two divs tag -->
+    <p>This paragraph is not floated.</p>
+
+
+    
+    <div class="clear-float">
+
+        <!-- This paragraph will dispalyed at the end of div section/. -->
+        <P>This is clear-float Paragraph</P>
+
+    </div>
+</body>
+</html>
