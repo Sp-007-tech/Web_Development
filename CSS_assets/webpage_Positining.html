@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Positioning .</title>
+    <style type="text/CSS">
+        
+        .lar{
+            font-size: 150%;
+            color: antiquewhite;
+        }
+        .ye{
+            text-decoration: underline;
+            
+        }
+        .first-section{
+            color: rgb(38, 255, 0);
+            background-color: black;
+            width: 40%;
+            float: left;
+            position: relative;
+            left:120px;
+            top: 150px;
+            /* z-index is used to overlap one another. */
+            z-index: 1;
+
+        }
+        .no{
+            color: bisque;
+    }
+        .second-section{
+            background-color: darkorange;
+            text-decoration: underline;
+            width: 40%;
+            float:right;
+            position: relative;
+            right: 120px;
+            top: 150px;
+           
+            opacity: 0.5;
+            /* z-index: 10; */
+        }
+        .clear-float{
+            clear: both;
+        }
+
+        .third-section{
+            position: fixed;
+            left: 200px;
+            top: 5000px;
+            background-color: rgb(16, 16, 16);
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="first-section">
+    <p >This is a first section and its shows the uses of positionning and z-index as well as opacity .</p></div>
+
+
+    <div class="second-section">
+    <h2 class="lar">Css in Cool !</h2>
+
+    <h3 class="no">This is a second section and its shows the uses of positionning and z-index as well as opacity.<p class="ye"> Ullam sed unde reprehenderit.</p></h3>
+</div>    
+    
+<!-- This paragraph will lay between two divs tag -->
+    <p>This paragraph is not floated.</p>
+
+
+    
+    <div class="clear-float">
+
+        <!-- This paragraph will dispalyed at the end of div section/. -->
+        <P>This is clear-float Paragraph</P>
+
+    </div>
+
+
+
+    <div class="third-section">This is the third section and it shows the used of fixed positioning, laborum.</div>
+</body>
+
+</html>
