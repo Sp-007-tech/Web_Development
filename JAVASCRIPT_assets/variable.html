@@ -1,0 +1,36 @@
+<html>
+
+<head></head>
+
+
+
+<body>
+
+    <input type="text" id="textInput">
+    
+    <button id="btn1">change the text !</button>
+
+    <p id="p1">This is some text .</p>
+
+
+    <script>
+
+
+        document.getElementById("btn1").onclick = function(){
+
+            var textEntered = "";
+            textEntered = document.getElementById("textInput").value;
+
+                // It will display the enterd text in box 
+            document.getElementById("p1").innerHTML = textEntered;
+        }
+    </script>
+
+</body>
+
+
+
+
+
+
+</html>
