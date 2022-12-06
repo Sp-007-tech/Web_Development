@@ -1,0 +1,137 @@
+<html>
+
+<head></head>
+
+<title>Reaction Project</title>
+<style>
+    #shape {
+        height: 150px;
+        width: 150px;
+        background-color: red;
+        display: none;
+        position: relative;
+
+    }
+
+    body {
+        font-family: sans-serif;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+</style>
+
+
+
+
+<body>
+
+    <div id="shape"></div>
+
+    <p>
+    <h1>Test Your Reaction Time !</h1>
+    </p>
+
+    <p>click on the boxese and circles quickly as you can⏬.</p>
+
+
+    <p id="bold">
+        Your Time : <span id="timeTaken"></span>
+    </p>
+
+
+
+
+    <script>
+
+
+        // To get time
+        var start = new Date().getTime();
+
+
+        // This function creates color randomly
+
+        function getRandomColor() {
+
+            // here "split()" is used to take that no.and character and split it into array and takes the color in HTML with numbering format.
+            var letters = '0123456789ABCDEFG'.split('');
+
+            var color = '#';
+
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+
+        // funtion for shapes appear on screen
+        function makeShapeAppear() {
+
+
+            //here shapes are appered randomly on the page by vertically and horizontally.
+            var top = Math.random() * 400;
+            var left = Math.random() * 400;
+
+
+            // here size and height of shapes also appear randomly..
+            var width = (Math.random() * 200) + 100;
+
+
+            // here it will create the circles.
+            if (Math.random() > 0.5) {
+
+                document.getElementById("shape").sytle.borderRadius = "500%";
+            } else {
+                document.getElementById("shape").style.borderRadius = "0";
+            }
+
+            document.getElementById("shape").style.backgroundColor = getRandomColor();
+
+            document.getElementById("shape").style.width = width + "px";
+
+            document.getElementById("shape").style.height = width + "px";
+
+            document.getElementById("shape").style.top = top + "px";
+
+            document.getElementById("shape").style.left = left + "px";
+            
+            document.getElementById("shape").style.display = "block";
+
+            start = new Date().getTime();
+ 
+
+        }
+
+        function appearAfterDelay() {
+            // this will get the random time when we clicked on shapes
+            setTimeout(makeShapeAppear, Math.random() * 2000);
+        }
+
+        appearAfterDelay();
+
+
+
+        document.getElementById("shape").onclick = function () {
+            document.getElementById("shape").style.display = "none";
+
+            var end = new Date().getTime();
+
+            // here we divide "timeTaken" varialble by 1000 to get time in seconds
+            var timeTaken = (end - start) / 1000;
+
+            document.getElementById("timeTaken").innerHTML = timeTaken + "s";
+
+            appearAfterDelay();
+
+
+
+
+        }
+
+    </script>
+</body>
+
+
+</html>
