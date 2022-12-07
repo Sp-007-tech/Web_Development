@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+
+        #circle{
+            background-color: black;
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            border-radius: 80px;
+
+        }
+        .square1{
+            background-color: red;
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            
+        }
+        .square{
+            background-color: rgb(12, 255, 3);
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+    <div id="circle"></div>
+    <div class="square1"></div>
+    <div class="square"></div>
+
+
+
+    <script>
+
+        // Here fadeOut is animation,i.e. when we clicked on circle & square it will disappear.
+        $("div").click(function(){
+            $(this).fadeOut("slow", function(){
+                alert("fadeout has complete !")
+            });
+        })
+
+            // when we clicked on shapes then it will disappear
+        $("div").click(function(){
+            $(this).hide("fast");
+        })
+
+
+
+    </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+</html>
