@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Fading Text!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        span {
+            cursor: pointer;
+        }
+
+        span.hilite {
+            background: blue;
+        }
+
+        div {
+            display: inline;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Find the text that you want to fade ! <div></div>
+    </h3>
+
+    <p>If you <span>really</span> want to go outside <span>in the cold</span> then make sure to wear your <span>warm
+            jacket</span> given to you by your <span>favourite teacher.</span></p>
+
+
+    <script>
+
+        $("span").click(function () {
+            $(this).fadeOut(1000, function () {
+                $("div").text("'" + $(this).text() + "' has faded!");
+                $(this).remove();
+            });
+        });
+        $("span").hover(function () {
+            $(this).addClass("hilite");
+        }, function () {
+            $(this).removeClass("hilite");
+        });
+
+    </script>
+</body>
+
+</html>
