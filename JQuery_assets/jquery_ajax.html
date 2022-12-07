@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>AJAX !</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <p></p>
+
+    <script>
+
+
+        // here we get the data from other files using get keyword.
+        $.get("info.txt",function(data){
+            alert(data);
+        });
+
+
+        // here is the another way to get data using AJAX command and it is more convinent way and we also add here alert msg if data was not found.
+        $.ajax("info.txt").done(function (data) {
+            alert(data);
+        }).fail(function () {
+            alert("could not get data .");
+        });
+
+
+
+            // here we will display the other file info. in "p" tag. using ajax command. 
+        $.ajax("info.txt").done(function(data){
+            $("p").html(data);
+        })
+        .fail(function(){
+            alert("could not get data !");
+        });
+
+    </script>
+</body>
+
+</html>
