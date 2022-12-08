@@ -1,0 +1,29 @@
+<html>
+
+    <head>
+    <title>DOM Manipulation </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+    </head>
+
+
+
+    <body>
+
+        <p class="test"></p>
+
+        <button class="btn1">click Me (text)</button>
+        <button class="btn2">click Me (HTML)</button>
+        <script>
+            $("#btn1").click(function(){
+                alert("Text: " + $("#test").text());
+            });
+
+                $("#btn2").click(function(){
+                    alert("Value: "+ $("#test").val());
+                });
+           
+
+        </script>
+    </body>
+</html>
