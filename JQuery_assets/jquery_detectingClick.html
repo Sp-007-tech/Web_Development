@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>jQuery Detecting click</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        #circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: green;
+            margin: 10px;
+
+        }
+
+        .square {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            margin: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="circle"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+
+
+    <script>
+
+        // (1) In jquery we can select element by their "id's" as well as by there 'type'.
+
+
+        // Here $ sign is act as "document.getElementById" as we used before in JS.
+
+        $("#circle").click(function () {
+            alert("circle was clicked !");
+
+        });
+
+        $(".square").click(function () {
+
+            alert("square was also clicked !")
+        });
+
+
+        // we can also select the element by its type.
+        // $("div").click(function(){
+        //     alert("a div is clicked ");
+        // });
+
+    </script>
+</body>
+
+
+</html>
