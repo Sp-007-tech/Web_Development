@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title>FadeOut With Button 🔲🔲!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        #hiddentext {
+            display: none;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- <p>This is some text</p>
+    <button id="fadeOut">Fade Out Text </button>
+
+    <p id="hiddentext">This is hidden text</p>
+    <button id="fadeIn">Fade In</button> -->
+
+
+    <p id="text">This is some toggle text</p>
+    <button id="toggle">Toggle Button</button>
+
+
+    <script>
+        // $("#fadeOut").click(function () {
+        //     $("p").fadeOut();
+        // })
+
+
+
+        // $("#fadeIn").click(function () {
+        //     $("#hiddentext").fadeIn();
+        // })
+
+
+
+        // Here when we clicked on button then text will fadeIn or fadeOut.
+        // $("#toggle").click(function () {
+        //     if ($("#text").css("display") == "none"){
+        //     $("#text").fadeIn();
+        // }else {
+        //     $("#text").fadeOut();
+        // }
+        // });
+
+
+        // we can do fadeIn & fadeOut with the variable also.
+
+        var textShow = true;
+
+        $("#toggle").click(function(){
+
+            if (textShow) {
+                $("#text").fadeOut(function(){
+                    textShow = false;
+                });
+            }else{
+                $("#text").fadeIn(function(){
+                    textShow = true;
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
