@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>jquery Droppable !</title>
+
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+        <link rel="stylesheet" href="/resources/demos/style.css">
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        
+
+        <style>
+
+            #draggable{
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+            }
+
+            #droppable{
+                width: 300px;
+                height: 300px;
+                background-color: red;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <div id="draggable"></div>
+        <div id="droppable"></div>
+
+
+        <script>
+
+            $("#draggable").draggable();
+
+            $("#droppable").droppable({
+
+                // here event is an objcect.
+                drop:function(event , ui){
+                    // alert("Dropped !");
+                   
+                   
+                     //This gives us the type of event and the type is Object.
+                    alert(event);
+                }
+            });
+
+
+
+        </script>
+    </body>
+</html>
