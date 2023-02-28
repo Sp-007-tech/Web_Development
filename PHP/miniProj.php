@@ -5,28 +5,36 @@ print_r($_POST);
 
 $error = ""; $successMessage = "";
 
-if (!$_POST["email"]){
+if (!$_POST["email"])
+{
     $error .= "An email address is required.<br>";
 }
 
-if (!$_POST["content"]){
+if (!$_POST["content"])
+{
     $error .= "The content is required.<br>";
 }
 
-if (!$_POST["subject"]){
+if (!$_POST["subject"])
+{
     $error .= "The subject is required.<br>";
 }
 
+
 // This will only shows up when email is invalid 
-if ($_POST['email'] && (filter_var($_POST["email"]), FILTER_VALIDATE_EMAIL) === false){
+if ($_POST['email'] && (filter_var($_POST["email"]), FILTER_VALIDATE_EMAIL) === false)
+{
     $error .= "The email address is invalid.<br>";
 }
 
-if ($error != ""){
+if ($error != "")
+{
 
-        $error = '<div class ="aleralert-danger" role="alert"><p><strong>There were error(s) in Your form: </strong></p>' + error +'</div>';
+  $error = '<div class ="aleralert-danger" role="alert"><p><strong>There were error(s) in Your form: </strong></p>' + error +'</div>';
 
-}else{
+}
+else
+{
     $emailTo = "gon@mydoamin.com";
 
     $subject = $_POST['subject'];
@@ -35,14 +43,16 @@ if ($error != ""){
 
     $headers = "From: ".$_POST['email'];
 
-    if (mail($email,$subject,$content,$headers)){
+    if (mail($email,$subject,$content,$headers))
+    {
         $successMessage = '<div class ="aleralert-success" role="alert">Your message was sent, we\'ll get back to you ASAP !</strong></p>''</div>';
-    }else{
+    }
+    else
+    {
 
         $error = '<div class ="aleralert-danger" role="alert"><p><strong>Your message couldn\'t be sent</strong></p>' + error +'</div>';
     }
 }
-
 ?>
 
 <!doctype html>
@@ -68,25 +78,30 @@ if ($error != ""){
         </div>
 
         <form method="post">
+            
             <fieldset class="form-group">
+                
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" name="email"
-                    placeholder="Enter Your email address.">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your email address.">
+                
             </fieldset>
 
-
             <fieldset class="form-group">
+                
                 <label for="subject">Subject</label>
                 <input type="text" class="form-control" id="subject" name="subject">
 
             </fieldset>
 
             <fieldset class="form-group">
+                
                 <lable for="content">what would you like to ask us? </label>
-                    <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+                <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+                
             </fieldset>
 
             <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+            
         </form>
     </div>
 
@@ -109,33 +124,33 @@ if ($error != ""){
 
         var error = "";
 
-        if ($("#email").val() == "") {
+        if ($("#email").val() == "") 
+        {
             error += "The email field is required.<br>"
         }
-        if ($("#subject").val() == "") {
+        if ($("#subject").val() == "")
+        {
             error += "The subject field is required.<br>"
         }
 
-        if ($("#content").val() == "") {
+        if ($("#content").val() == "") 
+        {
             error += "The content field is required.<br>"
         }
 
-
         // Following will show the error message in red color with seperate box.
-        if (error != "") {
-
+        if (error != "")
+        {
             $("#error").html(
                 '<div class ="alert alert-danger" role="alert"><p><strong>There were error(s) in Your form: </strong></p>' +
                 error + '</div>');
         }
 
         // if the both field i.e. content and subject field are filled with some text then it gets submitted.
-        else {
+        else 
+        {
             $("form").unbind("submit").submit();
         }
-
-
-
     });
     </script>
 </body>
